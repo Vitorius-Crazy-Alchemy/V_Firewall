@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Dark Warning Red Background Gradient -->
+    <linearGradient id="panicRedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="40%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#450a0a"/>
+    </linearGradient>
+
+    <!-- Warning Pulsing Rim -->
+    <linearGradient id="panicRimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f87171" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ef4444" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <linearGradient id="panicVLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <linearGradient id="panicVRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+
+    <filter id="panicBaseShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="panicGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#38bdf8" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Base Panic Red Squircle -->
+  <rect x="10" y="10" width="108" height="108" rx="26" fill="url(#panicRedGrad)" filter="url(#panicBaseShadow)"/>
+  <rect x="10" y="10" width="108" height="108" rx="26" fill="none" stroke="url(#panicRimGrad)" stroke-width="2.5"/>
+
+  <!-- Warning Crossbars in Background -->
+  <path d="M 20,40 L 108,88 M 20,88 L 108,40" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,4" stroke-opacity="0.3"/>
+
+  <!-- Electric Glowing Sky Blue V -->
+  <g filter="url(#panicGlow)">
+    <path d="M 24,28 L 46,28 L 64,68 L 64,98 Z" fill="url(#panicVLeft)"/>
+    <path d="M 104,28 L 82,28 L 64,68 L 64,98 Z" fill="url(#panicVRight)"/>
+    <line x1="24" y1="28" x2="46" y2="28" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="82" y1="28" x2="104" y2="28" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round"/>
+    <line x1="64" y1="68" x2="64" y2="98" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+</svg>
