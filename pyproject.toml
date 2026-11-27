@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "v-firewall"
+version = "3.0.0"
+description = "V Firewall 3.0 (GEOS) — GTK4/libadwaita Linux firewall suite with LineageGuard, Geo-blocking, IDS, and Deception Honeypot"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "PyGObject>=3.44",
+    "psutil>=5.9",
+]
+
+[tool.setuptools.packages.find]
+include = ["backend*", "ui*"]
